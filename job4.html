@@ -83,11 +83,22 @@
         a:hover { color: #e36a4c; text-decoration: underline; }
         a:active { color: #3c4f9f; text-decoration: underline; }
 
-        /* 类名链接 */
-        a.red:link { color: #e25b3d; }
-        a.red:active { color: #3046a1; }
-        a.blue:link { color: #4b7f60; }
-        a.blue:active { color: #a53aa4; }
+        /* 类名链接：保持整条为同一种颜色，不被全局伪类覆盖 */
+        a.red:link,
+        a.red:visited,
+        a.red:hover,
+        a.red:active {
+            color: #e25b3d;
+            text-decoration: none;
+        }
+
+        a.blue:link,
+        a.blue:visited,
+        a.blue:hover,
+        a.blue:active {
+            color: #4b7f60;
+            text-decoration: none;
+        }
 
         /* 伪元素要求 */
         p::first-letter {
@@ -205,3 +216,4 @@
 
 </body>
 </html>
+
